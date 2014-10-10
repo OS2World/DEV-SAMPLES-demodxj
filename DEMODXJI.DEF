@@ -1,0 +1,49 @@
+;	OPALCPPI.DEF
+
+NAME			DEMODXJI	WINDOWCOMPAT
+
+PROTMODE
+
+DESCRIPTION		'ICC Einsatz Opalis-DLL-Schnittstelle'
+
+DATA			SINGLE
+
+STACKSIZE		16384
+HEAPSIZE		8192
+
+IMPORTS
+    DXJAPI.DxjInitializeDLL
+    DXJAPI.DxjTerminateDLL
+    DXJAPI.DxjOpen
+    DXJAPI.DxjClose
+    DXJAPI.DxjTerminate
+    DXJAPI.DxjConnect
+    DXJAPI.DxjDisconnect
+    DXJAPI.DxjGetDecoderState
+    DXJAPI.DxjReadText
+    DXJAPI.DxjWriteText
+    DXJAPI.DxjWaitDCT
+    DXJAPI.DxjWaitForPage
+    DXJAPI.DxjGetPageNumber
+    DXJAPI.DxjTerminal
+    DXJAPI.DxjDisplay
+    DXJAPI.DxjHidden
+    DXJAPI.DxjSendTrpData
+    DXJAPI.DxjReceiveTrpData
+    DXJAPI.DxjGetApiUserName
+    DXJAPI.DxjGetErrorString
+    DXJAPI.DxjResetTrpBuffer
+    DXJAPI.DxjGetDCTCount
+    DXJAPI.DxjGetOnlineTime
+    DXJAPI.DxjGetOnlineRate
+    DXJAPI.DxjEnablePrg
+    DXJAPI.DxjGetDLLVersion
+    DXJAPI.DxjGetEXEVersion
+    DXJAPI.DxjEditOnlineSettings
+    DXJAPI.DxjSetModemData
+    DXJAPI.DxjGetModemData
+    DXJAPI.DxjSetISDNData
+    DXJAPI.DxjGetISDNData
+    DXJAPI.DxjGetModemChannel
+    DXJAPI.DxjGetISDNChannel
+

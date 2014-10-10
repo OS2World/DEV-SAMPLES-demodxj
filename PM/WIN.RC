@@ -1,0 +1,81 @@
+/*			Demo Datex-J Opalis 1.2 OS/2
+	Compiler	: BCOS2 2.0, ICC 2.1, WATCOM 10.0a
+	Datei		: WIN.RC
+				  Ressourcen-Definition
+*/
+
+#define	ID_PM1				1
+#define	IDM_FILE          10
+#define	IDM_LOAD				11
+#define	IDM_SAVE				12
+#define	IDM_EXIT          13
+#define	IDM_DATA				20
+#define	IDM_DATANEW			21
+#define	IDM_DATACLEAR		30
+#define	IDM_DATACLEARALL	31
+#define	IDM_DATACLEARLAST	32
+#define	IDM_DATEXJ			40
+#define	IDM_UEBERW			41
+#define	IDM_UEBERWSEND		42
+#define	IDM_DIREKT			50
+#define	IDM_ONLINE			51
+#define	IDM_OFFLINE			52
+
+// Dialog šberweisung
+#define	IDD_UEBERWEISUNG	30
+#define	ID_Empf				31
+#define	ID_Konto				32
+#define	ID_BLZ				33
+#define	ID_Bank				34
+#define	ID_Zweck1			35
+#define	ID_Zweck2			36
+#define	ID_DM					37
+#define	ID_Pf					38
+#define	ID_Kontoname		39
+#define	ID_PIN				40
+
+#ifdef RC_INVOKED
+
+ICON ID_PM1	"win.ico"
+
+MENU ID_PM1
+BEGIN
+	SUBMENU "~Programm", 		IDM_FILE
+	BEGIN
+		MENUITEM "E~nde", 		IDM_EXIT
+	END
+
+	SUBMENU "~Bearbeiten",		IDM_DATA
+	BEGIN
+		MENUITEM "~Eingabe",		IDM_DATANEW
+		MENUITEM SEPARATOR
+		MENUITEM	"~Laden",		IDM_LOAD
+		MENUITEM	"~Speichern",	IDM_SAVE
+		MENUITEM SEPARATOR
+		SUBMENU "~l”schen ...",  IDM_DATACLEAR
+		BEGIN
+			MENUITEM	"~letzten Eintrag",	IDM_DATACLEARLAST
+			MENUITEM SEPARATOR
+			MENUITEM	"~alle Eintr„ge",		IDM_DATACLEARALL
+		END
+	END
+
+	SUBMENU	"~Datex-J",					IDM_DATEXJ
+	BEGIN
+		SUBMENU	"š~berweisung ...",	IDM_UEBERW
+		BEGIN
+			MENUITEM	"~absenden",		IDM_UEBERWSEND
+		END
+		SUBMENU "~direkt ...",			IDM_DIREKT
+		BEGIN
+			MENUITEM "~Anwahl",			IDM_ONLINE
+			MENUITEM	SEPARATOR
+			MENUITEM "~Abwahl",			IDM_OFFLINE
+		END
+	END
+END
+
+rcinclude "ueberw.dlg"
+
+#endif // RC_INVOKED
+

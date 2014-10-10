@@ -1,0 +1,85 @@
+Die Opalis-C-Schnittstelle im öberblick
+
+Typ     Name                    Parameter               Bemerkung
+
+void    DxjInitializeDLL        - keine -               Initialisierung zum weiteren Zugriff
+
+void    DxjTerminateDLL         - keine -               Deinitialisierung
+
+USHORT  DxjOpenPSZ              decodername,
+                                PSZ username,
+                                BOOL visible            lÑdt den Decoder in einem sichtbaren oder unsichtbaren Zustand
+
+USHORT  DxjClose                - keine -               freigeben des Decoders, eine Verbindung bleibt bestehen
+
+USHORT  DxjTerminate            - keine -               beenden des Decoders mit Trennung
+
+USHORT  DxjConnect              BOOL usemodem           Anwahl durch den Decoder einleiten
+
+USHORT  DxjDisconnect           - keine -               Trennung einer Verbindung
+
+USHORT  DxjGetDecoderState      PUSHORT status          liefert Infos in status
+
+USHORT  DxjReadText             USHORT x1, USHORT y1,
+                                USHORT x2, USHORT y2,
+                                PST puffer,USHORT len   kopiert Bereich der BTX-Seite als Text in puffer 
+
+USHORT  DxjWriteText            PSZ text                sendet text
+
+USHORT  DxjWaitDCT              ULONG timeout           erwartet DCT
+
+USHORT  DxjGetDCTCount          PUSHORT dctcount        liefert die empfangene Anzahl DCT-Zeichen
+
+USHORT  DxjWaitForPage          PSZ pagename,
+                                ULONG timeout           erwartet pagename bis timeout Sekunden
+
+USHORT  DxjGetPageNumber        PSZ pagename,
+                                USHORT len              liefert in pagename die Nummer der aktuellen Seite
+
+USHORT  DxjTerminal             - keine -               aktiviert den Decoder sicht- und bedienbar
+
+USHORT  DxjHidden               - keine -               schaltet den Decoder unsichtbar
+
+USHORT  DxjDisplay              - keine -               aktiviert Sichtbarkeit
+
+USHORT  DxjSendTrpData          PBYTE pdaten,
+                                ULONG datenlen,
+                                BOOL endeflag           sendet datenlen Bytes ab pdaten als transparente Daten an DATEX-J
+
+USHORT  DxjReceiveTrpData       PBYTE pdaten,
+                                PULONG leseanz,
+                                ULONG datenlen,
+                                LONG timeout            speichert bei pdaten eingelesene transparente Daten ab; Anzahl in leseanz; wartet max timeout Sekunden
+
+USHORT  DxjResetTrpBuffer       - keine -               initialisiert den Empfangspuffer fÅr transparente Daten
+
+USHORT  DxjGetApiUserName       PSZ name,
+                                USHORT len              liefert in name des Nutzerprogrammes der API
+
+USHORT  DxjGetErrorString       USHORT fehler,
+                                PSZ fehlertext,
+                                USHORT len              liefert in fehlertext eine Textbeschreibung zu fehler
+
+USHORT  DxjGetOnlineTime        PSZ info                liefert die aktuelle Verbindungszeit in info im Format MM:SS
+
+USHORT  DxjGetOnlineRate        PSZ online              liefert die aktuelle VerbindungsgebÅhr in online im Format 01:23DM
+
+USHORT  DxjEnablePrg            BOOL enable             Umschalten der Bedienbarkeit des Decoders laut enable
+
+USHORT  DxjGetDLLVersion        PULONG version          liefert die Version der DLL
+
+USHORT  DxjGetEXEVersion        PULONG version          liefert die Version des notwendigen Decoders
+
+USHORT  DxjEditOnlineSettings   - keine -               Dialogaufruf zur Parametereinstellung
+
+USHORT  DxjSetModemData         PMODEMDATEN daten       setzt die Modemparameter laut daten
+
+USHORT  DxjGetModemData         PMODEMDATEN daten       kopiert die Modemeinstellungen nach daten
+
+USHORT  DxjSetISDNData          PISDNDATEN daten        setzt die ISDN-Parameter laut daten
+
+USHORT  DxjGetISDNData          PISDNDATEN daten        kopiert die ISDN-Einstellungen nach daten
+
+USHORT  DxjGetModemChannel      PSZ channelname         liefert in channelname den Namen der Modemeinstellung
+
+USHORT  DxjGetISDNChannel       PSZ channelname         liefert in channelname den Namen der ISDN-Einstellung

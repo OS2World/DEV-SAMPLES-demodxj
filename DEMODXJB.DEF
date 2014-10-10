@@ -1,0 +1,50 @@
+;	OPALCPP.DEF
+
+NAME			OPALCPP	WINDOWCOMPAT
+
+PROTMODE
+
+DESCRIPTION		'Einsatz Opalis-DLL-Schnittstelle'
+
+DATA			SINGLE
+
+STACKSIZE		16384
+HEAPSIZE		8192
+
+IMPORTS
+	_DxjInitializeDLL	= DXJAPI.DxjInitializeDLL
+	_DxjTerminateDLL	= DXJAPI.DxjTerminateDLL
+	_DxjOpen 			= DXJAPI.DxjOpen
+	_DxjClose 			= DXJAPI.DxjClose
+	_DxjTerminate 		= DXJAPI.DxjTerminate
+	_DxjConnect 		= DXJAPI.DxjConnect
+	_DxjDisconnect 		= DXJAPI.DxjDisconnect
+	_DxjGetDecoderState = DXJAPI.DxjGetDecoderState
+	_DxjReadText 		= DXJAPI.DxjReadText
+	_DxjWriteText 		= DXJAPI.DxjWriteText
+	_DxjWaitDCT 		= DXJAPI.DxjWaitDCT
+	_DxjWaitForPage 	= DXJAPI.DxjWaitForPage
+	_DxjGetPageNumber 	= DXJAPI.DxjGetPageNumber
+	_DxjTerminal 		= DXJAPI.DxjTerminal
+	_DxjDisplay 		= DXJAPI.DxjDisplay
+	_DxjHidden 			= DXJAPI.DxjHidden
+	_DxjSendTrpData 	= DXJAPI.DxjSendTrpData
+	_DxjReceiveTrpData 	= DXJAPI.DxjReceiveTrpData
+	_DxjGetApiUserName 	= DXJAPI.DxjGetApiUserName
+	_DxjGetErrorString 	= DXJAPI.DxjGetErrorString
+	_DxjResetTrpBuffer 	= DXJAPI.DxjResetTrpBuffer
+	_DxjGetDCTCount 	= DXJAPI.DxjGetDCTCount
+	_DxjGetOnlineTime 	= DXJAPI.DxjGetOnlineTime
+	_DxjGetOnlineRate 	= DXJAPI.DxjGetOnlineRate
+	_DxjEnablePrg 		= DXJAPI.DxjEnablePrg
+	_DxjGetDLLVersion 	= DXJAPI.DxjGetDLLVersion
+	_DxjGetEXEVersion 	= DXJAPI.DxjGetEXEVersion
+	_DxjEditOnlineSettings = DXJAPI.DxjEditOnlineSettings
+	_DxjSetModemData 	= DXJAPI.DxjSetModemData
+	_DxjGetModemData 	= DXJAPI.DxjGetModemData
+	_DxjSetISDNData 	= DXJAPI.DxjSetISDNData
+	_DxjGetISDNData 	= DXJAPI.DxjGetISDNData
+	_DxjGetModemChannel = DXJAPI.DxjGetModemChannel
+	_DxjGetISDNChannel 	= DXJAPI.DxjGetISDNChannel
+
+
